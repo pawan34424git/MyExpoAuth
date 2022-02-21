@@ -1,10 +1,7 @@
 # MyExpoAuth
 
-https://docs.expo.dev/bare/installing-unimodules/
-
 https://blog.logrocket.com/how-to-implement-faceid-and-touchid-in-react-native-and-expo/
 
-npm install react-native-unimodules
 
 yarn add expo-local-authentication
 
