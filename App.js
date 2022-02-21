@@ -26,6 +26,7 @@ const App = () => {
   React.useEffect(() => {
     (async () => {
       const compatible = await LocalAuthentication.hasHardwareAsync();
+      console.log('biometric compatible::', compatible);
       setIsBiometricSupported(compatible);
     })();
   });
@@ -34,6 +35,7 @@ const App = () => {
     if (isBiometricSupported) {
       (async () => {
         const compatible = await LocalAuthentication.isEnrolledAsync();
+        console.log('biometric enroll::', compatible);
         setIsBiometricEnrolled(compatible);
       })();
     }
@@ -62,9 +64,7 @@ const App = () => {
           {isBiometricEnrolled ? 'enrolled with Biometrics' : 'not enrolled'}
         </Text>
       </View>
-      {isBiometricEnrolled && (
-        <Button title={'Check Auth'} onPress={handleBiometricAuth} />
-      )}
+      <Button title={'Check Auth'} onPress={handleBiometricAuth} />
 
       <Text>{JSON.stringify(biometricAuth)}</Text>
     </SafeAreaView>
