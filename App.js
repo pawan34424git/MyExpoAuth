@@ -1,91 +1,72 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
 import {
+  Button,
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+import * as LocalAuthentication from 'expo-local-authentication';
 
-const App: () => Node = () => {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const [isBiometricSupported, setIsBiometricSupported] = React.useState(false);
+  const [isBiometricEnrolled, setIsBiometricEnrolled] = React.useState(false);
+  const [biometricAuth, setBiometricAuth] = React.useState({});
+
+  React.useEffect(() => {
+    (async () => {
+      const compatible = await LocalAuthentication.hasHardwareAsync();
+      setIsBiometricSupported(compatible);
+    })();
+  });
+
+  React.useEffect(() => {
+    if (isBiometricSupported) {
+      (async () => {
+        const compatible = await LocalAuthentication.isEnrolledAsync();
+        setIsBiometricEnrolled(compatible);
+      })();
+    }
+  }, [isBiometricSupported]);
+
+  const handleBiometricAuth = async () => {
+    const response = await LocalAuthentication.authenticateAsync({
+      promptMessage: 'Login with Biometrics',
+      disableDeviceFallback: true,
+    });
+    setBiometricAuth(response);
+  };
+
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <View style={styles.sectionContainer}>
+        <Text>
+          {'-------------------------------- '}
+          {isBiometricSupported
+            ? 'Compatible with Biometrics'
+            : 'Face or Fingerprint scanner is not available on this device'}
+        </Text>
+
+        <Text>
+          {'-------------------------------- '}
+          {isBiometricEnrolled ? 'enrolled with Biometrics' : 'not enrolled'}
+        </Text>
+      </View>
+      {isBiometricEnrolled && (
+        <Button title={'Check Auth'} onPress={handleBiometricAuth} />
+      )}
+
+      <Text>{JSON.stringify(biometricAuth)}</Text>
     </SafeAreaView>
   );
 };

@@ -12,8 +12,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3D21E0C50E0F4D1B5F8BCCF0 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA088C6799DDDD5C2BD17F1 /* ExpoModulesProvider.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		C4EFCE782FEB9B71E8C813ED /* libPods-MyExpoAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC3809B8AB1BE5BFC770A57 /* libPods-MyExpoAuth.a */; };
+		C729DDBD55C8FB4CD6BE2CE6 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FD7FB5C1B53873A8F9179 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +39,12 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyExpoAuth/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyExpoAuth/main.m; sourceTree = "<group>"; };
 		1B0DDF401F68C8D336A75DAE /* Pods-MyExpoAuth-MyExpoAuthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyExpoAuth-MyExpoAuthTests.release.xcconfig"; path = "Target Support Files/Pods-MyExpoAuth-MyExpoAuthTests/Pods-MyExpoAuth-MyExpoAuthTests.release.xcconfig"; sourceTree = "<group>"; };
+		207FD7FB5C1B53873A8F9179 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MyExpoAuth-MyExpoAuthTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		277DA1A7BF4DF02E24039EFE /* Pods-MyExpoAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyExpoAuth.debug.xcconfig"; path = "Target Support Files/Pods-MyExpoAuth/Pods-MyExpoAuth.debug.xcconfig"; sourceTree = "<group>"; };
 		2A89371A7F6E0527FFBE8DE9 /* Pods-MyExpoAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyExpoAuth.release.xcconfig"; path = "Target Support Files/Pods-MyExpoAuth/Pods-MyExpoAuth.release.xcconfig"; sourceTree = "<group>"; };
 		416092FFF90B318FF67E3DC5 /* Pods-MyExpoAuth-MyExpoAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyExpoAuth-MyExpoAuthTests.debug.xcconfig"; path = "Target Support Files/Pods-MyExpoAuth-MyExpoAuthTests/Pods-MyExpoAuth-MyExpoAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyExpoAuth/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCA088C6799DDDD5C2BD17F1 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MyExpoAuth/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		DCC3809B8AB1BE5BFC770A57 /* libPods-MyExpoAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyExpoAuth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F400C9CBA6D9947A12B086D6 /* libPods-MyExpoAuth-MyExpoAuthTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyExpoAuth-MyExpoAuthTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00C22B4CE2C3BB6A04351510 /* MyExpoAuth */ = {
+			isa = PBXGroup;
+			children = (
+				CCA088C6799DDDD5C2BD17F1 /* ExpoModulesProvider.swift */,
+			);
+			name = MyExpoAuth;
+			sourceTree = "<group>";
+		};
 		00E356EF1AD99517003FC87E /* MyExpoAuthTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C00D475A10A275AB1366EF3 /* MyExpoAuthTests */ = {
+			isa = PBXGroup;
+			children = (
+				207FD7FB5C1B53873A8F9179 /* ExpoModulesProvider.swift */,
+			);
+			name = MyExpoAuthTests;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +154,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				014D16691B51F43124D030EB /* Pods */,
+				956C50142D6019776A46C916 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +168,15 @@
 				00E356EE1AD99517003FC87E /* MyExpoAuthTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		956C50142D6019776A46C916 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				00C22B4CE2C3BB6A04351510 /* MyExpoAuth */,
+				3C00D475A10A275AB1366EF3 /* MyExpoAuthTests */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* MyExpoAuthTests.m in Sources */,
+				C729DDBD55C8FB4CD6BE2CE6 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +444,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				3D21E0C50E0F4D1B5F8BCCF0 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +469,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MyExpoAuthTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +493,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MyExpoAuthTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -635,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
